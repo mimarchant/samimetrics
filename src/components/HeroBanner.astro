@@ -1,0 +1,48 @@
+---
+import Chart from "../icons/chart.astro";
+import Keychain from "../icons/keychain.astro";
+import User from "../icons/user.astro";
+---
+
+<section
+  class="flex flex-col lg:flex-row justify-center items-center py-10 lg:px-20"
+>
+  <img
+    src="samilogo-planeta-samimetrics-el.webp"
+    class="xs:m-auto lg:mr-8 lg:w-[283px] lg:h-[45px]"
+    alt=""
+  />
+  <div class="flex p-2 flex-col items-center lg:flex-row gap-4 cursor-pointer">
+    <span
+      class="item-container flex flex-col items-center justify-center hover:scale-105 transition-transform"
+    >
+      <Chart class="logo-item" />
+      <span class="text-[lightgray] font-semibold"> FUNCIONALIDADES </span>
+    </span>
+
+    <span
+      class="item-container flex flex-col items-center justify-center hover:scale-105 transition-transform"
+    >
+      <Keychain class="logo-item" />
+      <span class="text-[lightgray] font-semibold"> INICIAR SESIÓN </span>
+    </span>
+
+    <span
+      class="item-container flex flex-col items-center justify-center hover:scale-105 transition-transform"
+    >
+      <User class="logo-item" />
+      <span class="text-[lightgray] font-semibold"> CONTACTO </span>
+    </span>
+  </div>
+</section>
+
+<style>
+  .logo-item {
+    color: lightgrey;
+  }
+
+  .item-container:hover {
+    text-decoration: underline;
+    text-decoration-color: lightgrey;
+  }
+</style>

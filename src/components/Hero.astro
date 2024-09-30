@@ -1,0 +1,113 @@
+---
+import Play from "../icons/play.astro";
+---
+
+<div class="flex flex-col justify-center items-center text-white text-center">
+  <h1 class="text-5xl font-[900]">
+    TOMA EL CONTROL DE LA <br /> SUSTENTABILIDAD
+  </h1>
+  <p class="text-2xl mt-2">
+    de tu BPS con SAMI, la RED de gestión de SUSTENTABILIDAD
+  </p>
+  <span class="text-xs inline-block mt-5 mb-2"> REPRODUCIR VIDEO </span>
+  <Play
+    class="w-12 h-12 mt-5 cursor-pointer hover:scale-105"
+    id="play-button"
+  />
+</div>
+
+<div id="video-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="close-button">&times;</span>
+    <iframe
+      width="560"
+      height="315"
+      id="video-frame"
+      src="https://www.youtube.com/embed/DSV3pryuKv0?si=Qkh2L0CRID6r0U4g"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+  </div>
+</div>
+
+<style>
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .close {
+    color: #aaa;
+    font-size: 28px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+  }
+
+  .close:hover {
+    color: black;
+  }
+
+  .play-icon {
+    width: 50px;
+    height: 50px;
+    filter: grayscale(1);
+    cursor: pointer;
+  }
+
+  div {
+    background-image: url("01-web-portada.webp");
+    height: 337px;
+    background-size: cover;
+    background-position: 50% center;
+  }
+</style>
+
+<script>
+  // Espera a que se cargue el DOM
+  document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("video-modal");
+    const playButton = document.getElementById("play-button");
+    const closeButton = document.getElementById("close-button");
+    const videoFrame = document.getElementById("video-frame");
+
+    // Abrir el modal al hacer clic en el botón de play
+    playButton.addEventListener("click", function () {
+      modal.style.display = "block";
+      videoFrame.src += "?autoplay=1"; // Añadir autoplay al video
+    });
+
+    // Cerrar el modal al hacer clic en la 'X'
+    closeButton.addEventListener("click", function () {
+      modal.style.display = "none";
+      videoFrame.src = videoFrame.src.replace("?autoplay=1", ""); // Detener el video
+    });
+
+    // Cerrar el modal al hacer clic fuera del contenido
+    window.addEventListener("click", function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+        videoFrame.src = videoFrame.src.replace("?autoplay=1", ""); // Detener el video
+      }
+    });
+  });
+</script>
