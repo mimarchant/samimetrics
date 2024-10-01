@@ -1,42 +1,62 @@
+---
+import Divider from "./Divider.astro";
+---
+
 <!-- Slideshow container -->
-<div class="slideshow-container">
+<div class="slideshow-container px-4">
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
-    <div class="numbertext">1 / 3</div>
     <img src="huella_de_carbono.webp" style="width:100%" />
-    <div class="text">Caption Text</div>
+    <div class="text">CONTROLA TUS OPERACIONES EN CUALQUIER LUGAR</div>
   </div>
 
   <div class="mySlides fade">
-    <div class="numbertext">2 / 3</div>
     <img src="identifica.webp" style="width:100%" />
-    <div class="text">Caption Two</div>
+    <div class="text">CREA Y ENVÍA REPORTES DE SUSTENTABILIDAD</div>
   </div>
 
   <div class="mySlides fade">
-    <div class="numbertext">3 / 3</div>
     <img src="indicadores_ambientales.webp" style="width:100%" />
-    <div class="text">Caption Three</div>
+    <div class="text">
+      MIDE, COMPARA & EVALÚA HUELLA DE CARBONO ENTRE OTROS DIECISIETE
+      INDICADORES DE IMPACTO AMBIENTAL
+    </div>
   </div>
 
   <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
-<br />
+  <!--   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
 
-<!-- The dots/circles -->
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
+  <!-- The dots/circles -->
+  <div style="text-align:center" class="dots-container">
+    <span class="dot" onclick="currentSlide(1)">
+      <img src="boton_01.webp" alt="" />
+    </span>
+    <span class="dot" onclick="currentSlide(2)">
+      <img src="boton_05.webp" alt="" />
+    </span>
+    <span class="dot" onclick="currentSlide(3)">
+      <img src="boton_03.webp" alt="" />
+    </span>
+  </div>
 </div>
+
+<Divider />
 
 <style>
   .slideshow-container {
     max-width: 1000px;
     position: relative;
-    margin: auto;
+    margin: 2rem auto;
+  }
+
+  .dots-container {
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    column-gap: 32px;
   }
 
   /* Hide the images by default */
@@ -75,13 +95,17 @@
 
   /* Caption text */
   .text {
-    color: #f2f2f2;
+    color: lightgrey;
     font-size: 15px;
     padding: 8px 12px;
     position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
+    bottom: 15%;
+    left: 5%;
+    width: 20%;
+    font-weight: 900;
+    background: linear-gradient(to right, #0071bc, #49c9e6 100%);
+    -webkit-background-clip: text; /* Muestra el fondo como el texto */
+    -webkit-text-fill-color: transparent; /* Hace el texto transparente para que el fondo se vea */
   }
 
   /* Number text (1/3 etc) */
@@ -96,8 +120,8 @@
   /* The dots/bullets/indicators */
   .dot {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 50px;
+    width: 50px;
     margin: 0 2px;
     background-color: #bbb;
     border-radius: 50%;
