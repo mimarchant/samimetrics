@@ -7,17 +7,21 @@ import Divider from "./Divider.astro";
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
     <img src="huella_de_carbono.webp" style="width:100%" />
-    <div class="text">CONTROLA TUS OPERACIONES EN CUALQUIER LUGAR</div>
+    <div class="text text-xs lg:text-lg w-4/5 lg:w-1/5">
+      CONTROLA TUS OPERACIONES EN CUALQUIER LUGAR
+    </div>
   </div>
 
   <div class="mySlides fade">
     <img src="identifica.webp" style="width:100%" />
-    <div class="text">CREA Y ENVÍA REPORTES DE SUSTENTABILIDAD</div>
+    <div class="text text-xs lg:text-lg w-3/5 lg:w-1/5">
+      CREA Y ENVÍA REPORTES DE SUSTENTABILIDAD
+    </div>
   </div>
 
   <div class="mySlides fade">
     <img src="indicadores_ambientales.webp" style="width:100%" />
-    <div class="text">
+    <div class="text text-xs lg:text-lg w-3/5 lg:w-1/5">
       MIDE, COMPARA & EVALÚA HUELLA DE CARBONO ENTRE OTROS DIECISIETE
       INDICADORES DE IMPACTO AMBIENTAL
     </div>
@@ -28,7 +32,7 @@ import Divider from "./Divider.astro";
   <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
 
   <!-- The dots/circles -->
-  <div style="text-align:center" class="dots-container">
+  <div style="text-align:center" class="dots-container lg:w-1/5">
     <span class="dot" onclick="currentSlide(1)">
       <img src="boton_01.webp" alt="" />
     </span>
@@ -94,12 +98,10 @@ import Divider from "./Divider.astro";
   /* Caption text */
   .text {
     color: lightgrey;
-    font-size: 15px;
     padding: 8px 12px;
     position: absolute;
     bottom: 15%;
     left: 5%;
-    width: 20%;
     font-weight: 900;
     background: linear-gradient(to right, #0071bc, #49c9e6 100%);
     -webkit-background-clip: text; /* Muestra el fondo como el texto */
@@ -118,8 +120,8 @@ import Divider from "./Divider.astro";
   /* The dots/bullets/indicators */
   .dot {
     cursor: pointer;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     margin: 0 2px;
     background-color: #bbb;
     border-radius: 50%;
@@ -144,6 +146,22 @@ import Divider from "./Divider.astro";
     }
     to {
       opacity: 1;
+    }
+  }
+
+  @media only screen and (width >= 768px) {
+    .dots-container {
+      position: absolute;
+      bottom: -5%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      column-gap: 32px;
+    }
+
+    .dot {
+      height: 50px;
+      width: 50px;
     }
   }
 </style>
