@@ -33,7 +33,9 @@ import User from "../icons/user.astro";
       class="item-container flex flex-col items-center justify-center hover:scale-105 transition-transform"
     >
       <User class="logo-item" />
-      <span class="text-[lightgray] font-semibold"> CONTACTO </span>
+      <span class="text-[lightgray] font-semibold">
+        <a href="#my-form">CONTACTO</a>
+      </span>
     </span>
   </div>
 </section>
@@ -46,5 +48,9 @@ import User from "../icons/user.astro";
   .item-container:hover {
     text-decoration: underline;
     text-decoration-color: lightgrey;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 </style>
