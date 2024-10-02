@@ -1,0 +1,58 @@
+---
+import Like from "../icons/like.astro";
+import X from "../icons/x.astro";
+import Linkedin from "../icons/linkedin.astro";
+---
+
+<footer class="bg-white min-h-36 px-4 py-8">
+  <div
+    class="flex flex-col lg:flex-row items-center justify-center gap-y-4 gap-x-10"
+  >
+    <span>
+      <button
+        class="bg-blue-600 flex items-center gap-x-2 px-4 py-1 text-white rounded-md font-bold"
+      >
+        <Like />
+        Like <span class="font-light">2.9k</span>
+      </button>
+    </span>
+
+    <span>
+      <button
+        class="bg-black flex items-center gap-x-2 px-4 py-1 text-white rounded-md font-bold h-full"
+      >
+        <a href="https://x.com/samimetrics?lang=es" target="_blank"><X /></a>
+      </button>
+    </span>
+
+    <span>
+      <button
+        class="bg-[rgb(0,115,177)] flex items-center gap-x-2 px-4 py-1 text-white rounded-md font-bold h-full"
+      >
+        <a
+          href="https://www.linkedin.com/company/sami---sustainability-metrics--/"
+          target="_blank"
+          class="flex items-center gap-x-2"><Linkedin /> Compartir</a
+        >
+      </button>
+    </span>
+  </div>
+
+  <h6 class="text-[lightgray] text-center mt-5 text-sm lg:text-md">
+    SAMI®, LA RED DE GESTIÓN DE SUSTENTABILIDAD®-TODOS LOS DERECHOS RESERVADOS
+    © - 2015
+  </h6>
+
+  <div class="flex justify-center mt-20">
+    <p class="text-sm text-[#222F65] pb-2">
+      Made with ❤️ by{" "}
+      <a
+        href="https://www.linkedin.com/in/miguel-marchant/"
+        target="_blank"
+        class="text-[#222F65] font-bold"
+      >
+        Miguel Marchant
+      </a>
+    </p>
+  </div>
+</footer>
