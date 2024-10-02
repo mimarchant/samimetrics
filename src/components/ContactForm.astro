@@ -1,4 +1,4 @@
-<section class="contact-form-wrapper py-5 px-4">
+<section class="contact-form-wrapper py-10 px-4">
   <form action="" id="my-form">
     <h4 class="text-center text-xl lg:text-2xl text-white">
       SAMILIZATE CON UNO DE NUESTROS EJECUTIVOS
@@ -103,6 +103,15 @@
     .addEventListener("submit", function (event) {
       event.preventDefault();
       const formData = new FormData(event.target);
+
+      if (
+        !formData.get("name") ||
+        !formData.get("email") ||
+        !formData.get("phone")
+      ) {
+        alert("Por favor, rellene los campos obligatorios");
+        return;
+      }
 
       const data = Object.fromEntries(formData.entries());
 
