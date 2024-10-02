@@ -1,0 +1,94 @@
+---
+import Divider from "./Divider.astro";
+---
+
+<section class="text-[#B4BAC0] tracking-[4px] mt-20">
+  <h3 class="text-center text-2xl">
+    SAMI, LA RED DE GESTIÓN DE SUSTENTABILIDAD
+  </h3>
+  <div
+    class="flex flex-col lg:flex-row justify-center items-center gap-x-8 mt-4"
+  >
+    <span>
+      <img src="ojos-sami-sustainability-metrics.webp" alt="" />
+    </span>
+    <div>
+      <article
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 justify-center items-center gap-4 overflow-x-hidden whitespace-nowrap"
+      >
+        <img src="magallanes.jpg" alt="" class="h-auto col-span-1" />
+        <img src="salfa.jpg" alt="" class="h-auto col-span-1" />
+        <img src="udd.jpg" alt="" class="h-auto col-span-1" />
+        <img src="santa_maria.jpg" alt="" class="h-auto col-span-1" />
+        <img src="3e.jpg" alt="" class="h-auto col-span-1" />
+
+        <img src="quad_graphics.jpg" alt="" class="h-auto col-span-1" />
+        <img src="truly.jpg" alt="" class="h-auto col-span-1" />
+        <img src="colmena.jpg" alt="" class="h-auto col-span-1" />
+        <img src="loncomilla.jpg" alt="" class="h-auto col-span-1" />
+        <img src="corfo.jpg" alt="" class="h-auto col-span-1" />
+      </article>
+    </div>
+  </div>
+</section>
+
+<Divider />
+
+<style>
+  /* Animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 10));
+    }
+  }
+
+  /* Styling */
+  .slider {
+    background: transparent;
+    /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 960px;
+  }
+
+  .slider::before,
+  .slider::after {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+
+  .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  .slider::before {
+    left: 0;
+    top: 0;
+  }
+
+  .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(250px * 10);
+  }
+
+  .slide {
+    height: 100px;
+    width: 250px;
+  }
+</style>
